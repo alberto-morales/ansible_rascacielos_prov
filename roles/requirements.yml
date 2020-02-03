@@ -1,0 +1,6 @@
+---
+# Pull down common roles
+- src: "https://github.com/alberto-morales/molecule-vagrant.git"
+  name: common
+  version: master
+  scm: git

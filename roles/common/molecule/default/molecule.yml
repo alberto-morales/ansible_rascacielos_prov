@@ -1,0 +1,52 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: virtualbox
+lint:
+  name: yamllint
+
+platforms:
+
+  - name: centos
+    box: bento/centos-7.5
+    groups:
+      - linux
+
+  - name: vagrant-2012r2
+    box: adaptiveme/windows2012r2
+    memory: 4096
+    # instance_raw_config_args:
+    #   - "vm.synced_folder './', '/vagrant', :mount_options => ['ro']"
+
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      vagrant-2012r2:
+        ansible_become: false
+        ansible_user: vagrant
+        ansible_password: vagrant
+        ansible_port: 55985
+        ansible_host: 127.0.0.1
+        ansible_connection: winrm
+        ansible_winrm_scheme: http
+        ansible_winrm_server_cert_validation: ignore
+    group_vars:
+      linux:
+        ansible_become: true
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: default
+  converge_sequence:
+    - create
+    - converge
+
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

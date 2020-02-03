@@ -1,0 +1,7 @@
+---
+# vars file for postgreSQL_server
+sdk_actions:
+  create:
+    - create
+  delete:
+    - delete

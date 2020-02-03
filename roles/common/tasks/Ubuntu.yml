@@ -1,0 +1,7 @@
+---
+# tasks file for molecule-vagrant
+- name: Ensure configuration file is present
+  template:
+    src: foo.conf.j2
+    dest: /etc/foo.conf
+  notify: restart foo
