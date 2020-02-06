@@ -52,7 +52,7 @@
       debug:
         var: secrets
 
-    - name: include geerlingguy.postgresql
+    - name: Include geerlingguy.postgresql
       include_role:
         name: geerlingguy.postgresql
         become: yes
