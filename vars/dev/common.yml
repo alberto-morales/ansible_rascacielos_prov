@@ -1,0 +1,22 @@
+---
+common:
+  sdk_user: ansible_user
+
+postgresql_python_library: python3-psycopg2
+
+postgresql_global_config_options:
+  - option: listen_addresses
+    value: '*'
+  - option: ssl
+    value: off
+    c
+postgresql_users:
+  - name: acme
+    password: acme
+
+postgresql_databases:
+  - name: example_db
+    login_user: acme
+    owner: acme
+
+
