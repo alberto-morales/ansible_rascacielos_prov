@@ -52,6 +52,3 @@
       debug:
         var: secrets
 
-  roles:
-    - role: geerlingguy.postgresql
-      become: yes
