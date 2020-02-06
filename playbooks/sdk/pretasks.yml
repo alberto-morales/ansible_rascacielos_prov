@@ -24,7 +24,7 @@
       include_vars: "{{ item.stat.path }}"
       when: item.stat.exists
       with_items: "{{ _variables_stat.results }}"
-      no_log: true
+      no_log: false
 
   run_once: true
   delegate_to: localhost
