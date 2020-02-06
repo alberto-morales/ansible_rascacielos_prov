@@ -2,7 +2,7 @@
 - name: Ansible SDK
   hosts: localhost
   connection: local
-  gather_facts: true
+  gather_facts: false
 
   pre_tasks:
 
@@ -29,7 +29,7 @@
 
 - name: Ansible SDK II
   hosts: scrappers
-  gather_facts: false
+  gather_facts: true
 
   pre_tasks:
 
