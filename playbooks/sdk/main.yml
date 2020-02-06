@@ -1,5 +1,5 @@
 ---
-- name: Ansible SDK
+- name: Ansible SDK I
   hosts: localhost
   connection: local
   gather_facts: false
@@ -23,6 +23,10 @@
       debug:
         var: secrets
 
+- name: "Ansible | List all known variables and facts I"
+  debug:
+    var: hostvars[inventory_hostname]
+
   roles:
     - role: postgreSQL_server
       sdk_action: create
@@ -31,12 +35,10 @@
   hosts: scrappers
   gather_facts: true
 
-  pre_tasks:
-
-    - name: Include Pre-Tasks
-      include_tasks: pretasks.yml
-
   tasks:
+    - name: "Ansible | List all known variables and facts II"
+      debug:
+        var: hostvars[inventory_hostname]
 
     - name: Debug SDK Base Dir
       debug:
