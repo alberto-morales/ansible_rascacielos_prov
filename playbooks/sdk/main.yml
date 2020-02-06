@@ -55,4 +55,3 @@
     - name: Include geerlingguy.postgresql
       include_role:
         name: geerlingguy.postgresql
-      become: yes
