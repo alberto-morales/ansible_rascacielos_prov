@@ -2,7 +2,7 @@
 - name: Ansible SDK
   hosts: localhost
   connection: local
-  gather_facts: false
+  gather_facts: true
 
   pre_tasks:
 
