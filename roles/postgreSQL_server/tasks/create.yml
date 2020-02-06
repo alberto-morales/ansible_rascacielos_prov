@@ -1,3 +1,4 @@
 ---
 - name: Create Debug
-  debug: TOMATES VERDES FRITOS
+  debug:
+    msg: TOMATES VERDES FRITOS
