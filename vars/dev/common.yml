@@ -9,7 +9,7 @@ postgresql_global_config_options:
     value: '*'
   - option: ssl
     value: off
-    c
+    
 postgresql_users:
   - name: acme
     password: acme
