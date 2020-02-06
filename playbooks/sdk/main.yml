@@ -23,9 +23,9 @@
       debug:
         var: secrets
 
-- name: "Ansible | List all known variables and facts I"
-  debug:
-    var: hostvars[inventory_hostname]
+    - name: "Ansible | List all known variables and facts I"
+      debug:
+        var: hostvars[inventory_hostname]
 
   roles:
     - role: postgreSQL_server
