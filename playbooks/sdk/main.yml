@@ -1,6 +1,7 @@
 ---
 - name: Ansible SDK
-  hosts: scrappers
+  hosts: localhost
+  connection: local
   gather_facts: false
 
   pre_tasks:
@@ -26,5 +27,7 @@
     - role: postgreSQL_server
       sdk_action: create
 
-    - role: geerlingguy.postgresql
-      become: yes
+    - hosts: scrappers
+      roles:
+        - role: geerlingguy.postgresql
+          become: yes
