@@ -14,6 +14,6 @@ postgresql_users:
 postgresql_databases:
   - name: example_db
     login_user: postgres
-    owner: psotgres
+    owner: postgres
 
 
