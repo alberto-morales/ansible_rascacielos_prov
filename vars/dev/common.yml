@@ -5,6 +5,8 @@ common:
 postgresql_python_library: python3-psycopg2
 
 postgresql_global_config_options:
+  - option: unix_socket_directories
+    value: '{{ postgresql_unix_socket_directories | join(",") }}'
   - option: listen_addresses
     value: '*'
   - option: ssl
