@@ -34,7 +34,6 @@
 - name: Ansible SDK II
   hosts: scrappers
   gather_facts: true
-  become: true
 
   tasks:
     - name: "Ansible | List all known variables and facts II"
@@ -56,3 +55,4 @@
     - name: Include geerlingguy.postgresql
       include_role:
         name: geerlingguy.postgresql
+      become: yes
