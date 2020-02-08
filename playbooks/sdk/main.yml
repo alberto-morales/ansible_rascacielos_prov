@@ -41,8 +41,6 @@
       include_tasks: pretasks.yml
 
   tasks:
-    - debug: var=inventory_hostname
-    - debug: var=ansible_hostname
     - name: Include geerlingguy.postgresql
       include_role:
         name: geerlingguy.postgresql
