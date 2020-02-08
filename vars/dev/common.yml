@@ -5,7 +5,8 @@ common:
 postgresql_python_library: python3-psycopg2
 
 postgresql_global_config_options:
-  listen_addresses : "'{{ inventory_hostname }}'"
+  - option: listen_addresses
+    value: "'{{ inventory_hostname }}'"
 
 postgresql_hba_entries:
   - { type: host, database: all, user: all, address: '192.168.68.1/0', auth_method: trust }
