@@ -1,7 +1,7 @@
 ---
 - name: Configure global settings.
   lineinfile:
-    dest: "{{ postgresql_config_path }}/c
+    dest: "{{ postgresql_config_path }}"
     regexp: "^#?{{ item.option }}.+$"
     line: "{{ item.option }} = '{{ item.value }}'"
     state: "{{ item.state | default('present') }}"
