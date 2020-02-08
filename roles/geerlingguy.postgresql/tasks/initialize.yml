@@ -14,14 +14,6 @@
     state: directory
     mode: 0700
 
-- name: Ensure PostgreSQL config path exists.
-  file:
-    path: "{{ postgresql_config_path }}"
-    owner: "{{ postgresql_user }}"
-    group: "{{ postgresql_group }}"
-    state: directory
-    mode: 0700
-
 - name: Check if PostgreSQL database is initialized.
   stat:
     path: "{{ postgresql_data_dir }}/PG_VERSION"
