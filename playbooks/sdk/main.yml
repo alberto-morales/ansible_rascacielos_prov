@@ -36,6 +36,10 @@
   gather_facts: true
   become: true
 
+  pre_tasks:
+    - name: Include Pre-Tasks
+      include_tasks: pretasks.yml
+
   tasks:
     - name: Include geerlingguy.postgresql
       include_role:
