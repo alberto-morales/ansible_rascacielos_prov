@@ -4,11 +4,8 @@ common:
 
 postgresql_python_library: python3-psycopg2
 
-postgresql_global_config_options:
-  - option: listen_addresses
-    value: '*'
-  - option: ssl
-    value: off
+postgresql_hba_entries:
+  - { type: host, database: all, user: all, address: '192.168.68.1', auth_method: peer }
 
 postgresql_users:
   - name: acme
