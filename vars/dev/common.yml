@@ -5,7 +5,7 @@ common:
 postgresql_python_library: python3-psycopg2
 
 postgresql_hba_entries:
-  - { type: host, database: all, user: all, address: '192.168.68.1', auth_method: peer }
+  - { type: host, database: all, user: all, address: '192.168.68.1', auth_method: trust }
 
 postgresql_users:
   - name: postgres
